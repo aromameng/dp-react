@@ -1,0 +1,65 @@
+.index_super_sale{
+    background-color: #fff;
+    padding: 7px 6px 10px;
+    .index_title{
+        display: block;
+        position: relative;
+        height: 32px;
+        line-height: 32px;
+        font-size: 15px;
+        padding-bottom: 5px;
+        padding-left: 3px;
+        color: #ff524b;
+    }
+    .index_content{
+        display: -webkit-box;
+        padding-bottom: 5px;
+    }
+    .index_content_item{
+        width: 33%;
+        border-radius: 3px;
+        padding: 0 4px;
+        display: block;
+        box-sizing: border-box;
+        .index_cnt{
+            position: relative;
+            img{
+                height: 67px;
+                border-radius: 2px;
+            }
+        }
+        .title{
+            color: #333;
+            font-size: 14px;
+            padding-top: 3px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .price{
+            line-height: 16px;
+            height: 16px;
+            font-size: 0;
+            padding-top: 5px;
+            position: relative;
+            .price_current{
+                color: #f63;
+                text-decoration: none;
+                font-size: 20px;
+                &:before{
+                    content: "\A5";
+                    font-size: 14px;
+                }
+            }
+            .price_old{
+                color: #999;
+                font-size: 12px;
+                margin-left: 2px;
+                &:before{
+                    content: "\A5";
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

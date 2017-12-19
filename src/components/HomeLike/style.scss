@@ -1,0 +1,75 @@
+.index_for_you{
+    background-color: #fff;
+    .index_like_title{
+        height: 30px;
+        line-height: 40px;
+        padding-left: 15px;
+        font-size: 14px;
+        color: #777;
+    }
+    .index_content{
+        background-color: #fff;
+        position: relative;
+        .index_content_item{
+            margin-left: 15px;
+            padding: 11px 10px 11px 0;
+            box-sizing: border-box;
+            display: -webkit-box;
+            .pic{
+                position: relative;
+                font-size: 0;
+                padding-right: 10px;
+                img{
+                    width: 120px;
+                    height: 75px;
+                }
+            }
+            .content{
+                -webkit-box-flex: 1;
+            }
+            .shop_name{
+                max-width: 145px;
+                font-size: 17px;
+                font-weight: 700;
+                color: #111;
+                padding-right: 8px;
+                box-sizing: border-box;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .shop_name_sub{
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                font-size: 13px;
+                color: #777;
+                padding-top: 9px;
+                padding-bottom: 13px;
+            }
+            .item_price{
+                .price{
+                    color: #f63;
+                    font-size: 21px;
+                    text-decoration: none;
+                    font-weight: 700;
+                    &:before{
+                        content: "\A5";
+                        font-size: 14px;
+                    }
+                }
+                            
+            }
+            .sale_desc{
+                display: inline;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                float: right;
+                font-size: 13px;
+                color: #777;
+                line-height: 24px;
+            }
+        }
+    }
+}

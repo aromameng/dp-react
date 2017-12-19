@@ -1,0 +1,140 @@
+$primary: #f56a00 !default;
+
+@import "variables.scss";
+
+body{
+  overflow: hidden;
+  min-height: 100%;
+}
+a{
+  color: $primaryLight;
+}
+.inside-wrap {
+  box-sizing: border-box;
+  > div {
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+}
+#view {
+  // height: 100%;
+}
+.inside-wrap > div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  .header,.footer{
+    position: relative;
+    flex:none;
+  }
+  .c-content{
+    position: relative;
+    height: 100%;
+    flex:1;
+    overflow: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling:touch;
+    font-size: 0.28rem;
+  }
+}
+.J-header {
+    position: relative;
+    display: flex;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    background-color: $primary;
+    color: #FFF;
+    font-size: 18px;
+    > .aside:last-child {
+      text-align: right;
+    }
+    > .title {
+      width: 50%;
+      text-align: center;
+      font-size: 18px;
+    }
+    .back {
+      position: absolute;
+      left: 0;
+      height: 100%;
+      line-height: 50px;
+      padding-left: 5px;
+      top: 0;
+      display: flex;
+      i {
+        font-size: 28px;
+      }
+    }
+    .search {
+      display: inline-block;
+      padding-right: 15px;
+      i {
+        font-size: 18px !important;
+      }
+    }
+}
+
+.J-footer{
+    text-align: center;
+    padding: 15px 5px 10px;
+    font-weight: 400;
+    font-size: 12px;
+    a{
+      color: #adadad;
+      line-height: 28px;
+    }
+    .narrow_sep,.wide_sep,em{
+      color: #8c8c8c;
+      font-weight: 400;
+      font-style: normal;
+    }
+    .wide_sep{
+      padding: 0 6px;
+    }
+    .narrow_sep{
+      padding: 0 3px;
+    }
+}
+
+//确定按钮
+button[disabled] {
+  background: #c4c4c4;
+  border-color: #FFF;
+}
+
+//全局隐藏
+.hide {
+  display: none !important;
+}
+
+//input
+input {
+  outline: none;
+}
+
+.c-gray{
+  color: $gray;
+}
+
+
+.cp-loading{
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.cp-load-more{
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+}
