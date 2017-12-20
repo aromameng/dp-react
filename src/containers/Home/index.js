@@ -13,6 +13,7 @@ import Category from 'components/Category'
 import HomeRecommend from 'components/HomeRecommend'
 import HomeLike from 'components/HomeLike'
 import LoadMore from 'components/common/LoadMore'
+import Loading from 'components/common/Loading'
 
 import { connect } from 'react-redux'
 require('es6-promise').polyfill();
@@ -51,7 +52,7 @@ class Home extends Component {
             <div>  
                 <Header title={'首页'}></Header>
                 <div className="c-content view-home">
-                    <Category></Category>
+                    <Category></Category>                
                     {
                         lists.length 
                         ? <HomeRecommend lists={lists} title={'天天立减'}></HomeRecommend> 
@@ -62,8 +63,9 @@ class Home extends Component {
                         ? <HomeLike lists={likeList} title={'猜你喜欢'}></HomeLike>
                         : <div className="cp-loading">加载中</div>
                     }
-                    <LoadMore loadMore={this.loadMoreLikeList.bind(this)} isLoadingMore={this.props.isLoading}></LoadMore>
+                    <LoadMore loadMore={this.loadMoreLikeList.bind(this)} isLoadingMore={this.props.isLoading}></LoadMore>                  
                     <Footer></Footer> 
+                    <Loading></Loading>
                 </div>                       
             </div>               
         )

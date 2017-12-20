@@ -7,7 +7,7 @@ const rootRouter = {
     path: '/',
     getComponent(nextState, cb) {
         require.ensure([], (require) => {
-            cb(null, require('../containers/InsideContainer'));
+            cb(null, require('../containers/mainContainer'));
         })
     },
     indexRoute: {

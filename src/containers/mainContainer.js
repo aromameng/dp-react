@@ -11,8 +11,10 @@ class app extends React.Component {
         
     }
     render() {
-        return <div className='inside-wrap'>                      
-               {this.props.children}             
+        return <div className='view-wrapper'>
+                    <div className='view-main'>
+                        {this.props.children} 
+                    </div>                                             
             </div>
     }
 }

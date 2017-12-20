@@ -13,6 +13,10 @@ let initState = Map({
 
 export default global=(state=initState, action)=>{
     switch (action.type) {
+        case 'SHOW_LOADING':
+            return state.set("loading",true)
+        case 'HIDE_LOADING':
+            return state.set("loading",false)
         case 'TOAST_ACTION':           
             return state.set("toastState",action.args)
         case 'SET_USER_INFO':

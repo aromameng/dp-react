@@ -3,17 +3,17 @@ import {
 } from 'redux'
 
 import thunk from 'redux-thunk';
+import createLogger from 'redux-logger';
 
-import articleReducers from '../reducers/articleReducers'
-import global from '../reducers/commonReducers'
-import home from '../reducers/homeReducers'
+import rootReducer from '../reducers';
 
-const rootReducer = combineReducers({
-    todos:articleReducers,// 键名就是该 reducer 对应管理的 state
-    global:global,
-    home:home
-  })
+const logger = createLogger();
+let store;
 
-var store = createStore(rootReducer,applyMiddleware(thunk));
+if(process.env.NODE_ENV=='production'){
+     store = createStore(rootReducer,applyMiddleware(thunk));
+}else{
+     store = createStore(rootReducer,applyMiddleware(thunk,logger));
+}
 
 export default store;

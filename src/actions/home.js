@@ -10,6 +10,8 @@ require('es6-promise').polyfill();
 require('isomorphic-fetch');
 import api from 'api/index'
 
+import fetchJson from '../utils/fetch'
+
 export const home = {
     saveRecommendList:(list)=>{
         return {
@@ -30,20 +32,34 @@ export const home = {
 
 // 推荐
 export const getRecommendList = ()=>{
-    return async dispatch =>{
-        let res = await fetch(api.getRecommendList);
-        let result = await res.json();
-        dispatch(home.saveRecommendList(result.data))
+    return dispatch =>{
+        fetchJson(api.getRecommendList,{
+            type:'get',
+            dispatch,
+            success:(result)=>{
+                dispatch(home.saveRecommendList(result.data))
+            }
+        });
     }
 }
 
 // 喜欢
 export const getLikeList = (page)=>{
     return async dispatch =>{
-        let res = await fetch(api.getLikeList + '?page='+page);
-        let result = await res.json();
-        let lists = result.data;
-        delete result.data;
-        dispatch(home.saveLikeList(lists,result))
+        // let res = await fetch(api.getLikeList + '?page='+page);
+        // let result = await res.json();
+        // let lists = result.data;
+        // delete result.data;
+        // dispatch(home.saveLikeList(lists,result))
+        fetchJson(api.getLikeList + '?page='+page,{
+            type:'get',
+            dispatch,
+            success:(result)=>{
+                let lists = result.data;
+                console.log(result)
+                delete result.data;             
+                dispatch(home.saveLikeList(lists,result))
+            }
+        });
     }
 }
