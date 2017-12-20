@@ -2,9 +2,12 @@
 const Koa = require('koa'),
 Router = require('koa-router');
 var Mock = require('mockjs');
+var cors = require('koa-cors');
 
 const app = new Koa(),
 router = new Router;
+
+app.use(cors());
 
 // 首页 —— 推荐列表（猜你喜欢）
 const homeListData = require('./home/list.js')

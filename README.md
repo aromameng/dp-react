@@ -13,3 +13,5 @@
 > 运行 `npm run start`
 
 > 运行mock `npm run mock`
+
+> 生产环境打包 `npm run build`
