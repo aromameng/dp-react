@@ -21,14 +21,14 @@ const rootRouter = {
         path: 'news',
         getComponent(nextState, cb) {
             require.ensure([], (require) => {
-                cb(null, require('../containers/news'),'news');
+                cb(null, require('../containers/News/news'),'news');
             })
         }
     },{
         path: 'newsDetail/:id',
         getComponent(nextState, cb) {
             require.ensure([], (require) => {
-                cb(null, require('../containers/newsDetail'),'newsDetail');
+                cb(null, require('../containers/News/newsDetail'),'newsDetail');
             })
         }
     },{

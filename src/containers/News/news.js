@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom'
-import api from '../api/index'
+import api from 'api/index'
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
-import Header from '../components/common/Header'
-import Footer from '../components/common/Footer'
+import Header from 'components/common/Header'
+import Footer from 'components/common/Footer'
 import { Link } from 'react-router'
 
-import './page.scss'
+import '../page.scss'
 
 class News extends Component {
     constructor() {

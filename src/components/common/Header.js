@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Icon } from 'antd-mobile';
 
 class Header extends React.Component {
 
@@ -9,7 +10,7 @@ class Header extends React.Component {
         return <header className='J-header'>
             <div className="head">
                 <div className={isShowBack} onClick={this.goBack.bind(this)}>
-                    <i className="icon iconfont icon-icon_right"></i>
+                    <Icon type='left' size='lg' />
                 </div>
                 <div className="title">{title}</div>
             </div>

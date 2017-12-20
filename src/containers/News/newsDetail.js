@@ -4,7 +4,7 @@ import api from 'api/index'
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
 import Header from 'components/common/Header'
-import './page.scss'
+import '../page.scss'
 
 import clonedeep from 'lodash.clonedeep'
 
