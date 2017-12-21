@@ -2,23 +2,10 @@
 
 
 // 首页
-.home-menu{
-	padding: 0 2%;
-	text-align: center;
-	&>li{
-		font-size: 0.32rem;
-		line-height: 0.6rem;
-		text-align: left;
-	}
-	.logo{
-		width: 80%;
-		padding: 0.2rem 0;
-	}
-	.pic{
-		width: 80%;
-		height: 5rem;
-		background: url('../assets/imgs/01.png') no-repeat;
-		background-size: 100%;
+.view-home{
+	.J-header{
+	  background-color: $primary;
+	  color: #FFF;
 	}
 }
 
@@ -111,5 +98,105 @@
 	textarea{
 		width: 80%;
 		min-height:2rem;
+	}
+}
+
+.view-form{
+	.errors{
+		line-height: 30px;
+		font-size: 12px;
+		color: #f56a00;
+		padding: 0 10px;
+	}
+}
+
+// 团购详情
+.view-pro-detail{
+	.swipe-wrap{
+		position: relative;
+		.carousel-item{
+			img{
+				display: inline-block;
+				width: 100%;
+				min-height: 100px;
+				height:160px;
+			}
+		}
+		.swipe-page{
+			position: absolute;
+			right: 20px;
+			top: 20px;
+			background: rgba(0,0,0,.5);
+			color: #fff;
+			padding: 3px 6px;
+			border-radius: 10px;
+		}
+		.pro-title{
+			position: absolute;
+			bottom:0;
+			background: rgba(0,0,0,.1);
+			color:#fff;
+			left:0;
+			width:100%;
+			padding:10px 15px;
+			line-height: 16px;
+			h4{
+				font-size: 16px;
+				line-height: 20px;	
+			}
+		}
+	}
+	.price-list{
+		.price{
+			display: inline-block;
+			color: #f63;
+			position: relative;
+			font-size: 21px;
+			&:before{
+				content: "\A5";
+				font-size: 14px;
+			}
+		}
+		.tip{
+			
+			.am-list-content{
+				display: table;
+				width: 100%;
+			}
+			.tip-item{
+				width: 50%;
+				display: table-cell;
+				font-size: 12px;
+				text-align: center;
+			}
+		}
+		.buy{
+			display: inline-block;
+			float: right;
+			height: 34px;
+			width: 105px;
+			color: #fff;
+			background-color: #f63;
+			border-radius: 5px;
+			text-align: center;
+			line-height: 35px;
+			display: block;
+			font-size: 16px;
+		}
+	}
+}
+// 购买
+.view-pro-buy{
+	.J-header{
+		background-color: #fff;
+		color: #333;
+	}
+	.pro-title{
+		padding: 10px 15px;
+		font-size: 14px;
+		color: #999;
+		.num{
+			float: right;
+		}
 	}
 }

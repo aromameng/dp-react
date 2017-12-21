@@ -1,10 +1,11 @@
 /*
  * @Author: meng 
- * @Date: 2017-12-15 17:19:23 
+ * @Date: 2017-12-15 18:19:23 
  */
 
 import React from 'react'
 import PropTypes from 'prop-types';
+import { Link } from 'react-router'
 
 import './style.scss'
 class HomeLike extends React.Component{
@@ -18,7 +19,7 @@ class HomeLike extends React.Component{
                 <div className="index_content clear-fix">
                     { lists.map((item,index) => {
                         return (
-                            <a key={ index } className="index_content_item float-left">
+                            <Link to={'/proDetail/'+item.id} key={ index } className="index_content_item float-left">
                                 <div className="pic">
                                      <img src={ item.img } alt={ item.shopName }/>
                                 </div>
@@ -30,7 +31,7 @@ class HomeLike extends React.Component{
                                         <div className="sale_desc">已售{item.sales}</div>
                                     </div>
                                 </div>                            
-                            </a>
+                            </Link>
                         )
                     })}
                 </div>

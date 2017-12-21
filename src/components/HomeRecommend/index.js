@@ -5,6 +5,7 @@
 
 import React from 'react'
 import PropTypes from 'prop-types';
+import { Link } from 'react-router'
 
 import './style.scss'
 class HomeRecommend extends React.Component{
@@ -17,7 +18,7 @@ class HomeRecommend extends React.Component{
                 <div className="index_content clear-fix">
                     { lists.map((item,index) => {
                         return (
-                            <a key={ index } className="index_content_item float-left">
+                            <Link to={'/proDetail/'+item.id} key={ index } className="index_content_item float-left">
                                 <div className="index_cnt">
                                      <img src={ item.img } alt={ item.title }/>
                                 </div>
@@ -26,7 +27,7 @@ class HomeRecommend extends React.Component{
                                     <ins className="price_current">{item.price}</ins>
                                     <del className="price_old">{item.oldPrice}</del>
                                 </div>
-                            </a>
+                            </Link>
                         )
                     })}
                 </div>

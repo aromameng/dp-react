@@ -1,6 +1,6 @@
 /*
  * @Author: meng 
- * @Date: 2017-12-15 15:38:54 
+ * @Date: 2017-12-15 19:38:54 
  */
 
 import React, { Component,PropTypes } from 'react';
@@ -24,6 +24,8 @@ import action from 'actions/action'
 import {getRecommendList,getLikeList} from 'actions/home'
 import api from 'api/index'
 
+import '../page.scss'
+
 import { Button } from 'antd-mobile';
 
 class Home extends Component {  
@@ -37,7 +39,7 @@ class Home extends Component {
         this.props.getLikeList(page);
     }
 
-    loadMoreLikeList() {
+    handleLoadMore() {
         let page = Number(this.props.likeList.info.page) + 1,
             isLastPage = this.props.likeList.info.isLastPage;
         if(isLastPage) return this.props.setListLoading(false);
@@ -49,9 +51,9 @@ class Home extends Component {
         let lists= this.props.recommendList;
         let likeList = this.props.likeList.data;
         return ( 
-            <div>  
+            <div className='view-home'>  
                 <Header title={'首页'}></Header>
-                <div className="c-content view-home">
+                <div className="c-content">
                     <Category></Category>                
                     {
                         lists.length 
@@ -63,7 +65,7 @@ class Home extends Component {
                         ? <HomeLike lists={likeList} title={'猜你喜欢'}></HomeLike>
                         : <div className="cp-loading">加载中</div>
                     }
-                    <LoadMore loadMore={this.loadMoreLikeList.bind(this)} isLoadingMore={this.props.isLoading}></LoadMore>                  
+                    <LoadMore loadMore={this.handleLoadMore.bind(this)} isLoadingMore={this.props.isLoading}></LoadMore>                  
                     <Footer></Footer> 
                     <Loading></Loading>
                 </div>                       

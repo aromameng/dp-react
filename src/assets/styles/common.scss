@@ -9,6 +9,13 @@ body{
 a{
   color: $primaryLight;
 }
+.mtop10{
+  margin-top: 10px;
+}
+.mtop20{
+  margin-top: 20px;
+}
+
 
 #view {
   // height: 100%;
@@ -50,9 +57,10 @@ a{
     height: 44px;
     align-items: center;
     justify-content: center;
-    background-color: $primary;
-    color: #FFF;
+    background-color: #fff;
+    color: #333;
     font-size: 18px;
+    background-color: #f0f0f0;
     > .aside:last-child {
       text-align: right;
     }
